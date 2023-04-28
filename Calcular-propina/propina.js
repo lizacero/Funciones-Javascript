@@ -13,7 +13,7 @@ console.log("---------------  Funcion Declarada  ---------------")
     console.log(`Para una cuenta de $${totalFactura}cop y una propina del ${porcentajePropina}%, 
 la propina a pagar es de $${propina} cop.`);
 }
-//funcion expresada
+//funcion expresada: son anónimas
 console.log("---------------  Funcion Expresada  ---------------")
 {
     let calcularPropina = function (totalCuenta, porcentajePropina) {
@@ -26,6 +26,14 @@ console.log("---------------  Funcion Expresada  ---------------")
     console.log(`Para una cuenta de $${totalFactura}cop y una propina del ${porcentajePropina}%, 
 la propina a pagar es de $${propina} cop.`);
 }
+//Funciones anónimas (casi no se usa)
+(function(){
+    console.log("Mi función anónima")
+})();
+(function(c){
+    c.log("Mi función anónima con un parámetro")
+})(console);
+
 //funcion flecha
 console.log("---------------  Funcion Flecha  ---------------")
 {
@@ -37,6 +45,15 @@ console.log("---------------  Funcion Flecha  ---------------")
     let propina = calcularPropina(totalFactura, porcentajePropina);
     console.log(`Para una cuenta de $${totalFactura}cop y una propina del ${porcentajePropina}%, 
 la propina a pagar es de $${propina} cop.`);
+
+    const sumar = (a,b) => a+b
+    console.log(sumar(2,3));
+//función flecha anidada
+    const promedio =(a,b) =>{
+        const sumar2 = () => a+b
+        return sumar2()/2
+    }
+    console.log(promedio(2,3))
 }
 
 //Ahora Agregemos esas funciones a otra funcion
